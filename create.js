@@ -5,7 +5,11 @@ let schema = `
 create table test(
   id integer primary key,
   name text,
-  address text
+  hp integer,
+  stun integer,
+  dash integer,
+  backstep integer,
+  most integer
 );
 `
 
