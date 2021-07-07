@@ -4,12 +4,11 @@ const db = new sqlite3.Database('sfv.db');
 let schema = `
 create table test(
   id integer primary key,
-  name text,
-  hp integer,
-  stun integer,
-  dash integer,
-  backstep integer,
-  most integer
+  名前 text,
+  性別 text,
+  体力値 integer,
+  スタン値 integer,
+  使用順位 integer
 );
 `
 

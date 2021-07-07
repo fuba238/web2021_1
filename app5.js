@@ -14,11 +14,22 @@ app.get("/", (req, res) => {
 
 app.get("/db", (req, res) => {
     db.serialize( () => {
-        db.all("select id, name, address from test;", (error, data) => {
+        db.all("select id, 都道府県, 人口, 大学 from example;", (error, row) => {
             if( error ) {
                 res.render('show', {mes:"エラーです"});
             }
-            res.render('select', {data:data});
+            res.render('db', {data:row});
+        })
+    })
+});
+
+app.get("/sfv", (req, res) => {
+    db.serialize( () => {
+        db.all("select id, 名前, 性別, 体力値, スタン値, 使用順位 from test;", (error, row) => {
+            if( error ) {
+                res.render('show', {mes:"エラーです"});
+            }
+            res.render('sfv', {data:row});
         })
     })
 });

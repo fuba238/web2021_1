@@ -1,0 +1,20 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Show message</title>
+</head>
+<body>
+  <h2>ストリートファイター5のキャラクター情報</h2>
+  <table>
+    <% for( let row of data ) { %>
+      <tr><td>ID</td><td><%= row.id %></td></tr>
+      <tr><td>名前</td><td><%= row.名前 %></td></tr>
+      <tr><td>性別</td><td><%= row.性別 %></td></tr>
+      <tr><td>体力値</td><td><%= row.体力値 %></td></tr>
+      <tr><td>スタン値</td><td><%= row.スタン値 %></td></tr>
+      <tr><td>使用順位</td><td><%= row.使用順位 %></td></tr>
+    <% } %>
+  </table>
+</body>
+</html>

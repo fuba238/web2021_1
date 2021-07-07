@@ -5,10 +5,11 @@
   <title>Show message</title>
 </head>
 <body>
-  <h2><%= data[0].都道府県 %>の詳細</h2>
+  <h2>都道府県の詳細</h2>
   <table>
     <% for( let row of data ) { %>
       <tr><td>ID</td><td><%= row.id %></td></tr>
+      <tr><td>都道府県</td><td><%= row.都道府県 %></td></tr>
       <tr><td>人口</td><td><%= row.人口 %></td></tr>
       <tr><td>大学数</td><td><%= row.大学 %></td></tr>
     <% } %>
