@@ -74,6 +74,18 @@ app.get("/gender", (req, res) => {
     })
   })
 })
+app.post("/insert", (req, res) => {
+  let sql = 'insert into test ("名前", "性別", "体力値", "スタン値", "使用順位") values ("' + req.body.名前 + '","' + req.body.性別 + '","' + req.body.体力値 + '","' + req.body.スタン値 + '","' + req.body.使用順位 + '");';
+  db.serialize( () => {
+    db.run( sql, (error, row) => {
+      console.log(error);
+      if(error) {
+        res.render('show', {mes:"エラーです"});
+      }
+      res.render('show', {mes:"成功です"});
+    });
+  });
+});
 
 app.use(function(req, res, next) {
   res.status(404).send('ページが見つかりません');
